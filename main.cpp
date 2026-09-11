@@ -1,32 +1,20 @@
-#include <iostream>
-#include <vector>
+#include "network.h"
 
 using namespace std;
 
 int main() {
 
     int num_neurons = 3;
-    int product = 0;
-    int dot_product = 0;
-    vector<int> weights = {1, 2, 9, 2, 1, 2};
-    vector<int> input = {3, 3};
-    vector<int> result = {};
+    vector<float> weights = {1, 2, 9, 2, 1, 2};
+    vector<float> input = {3, 1};
+    vector<float> result = {};
+
+    vector<float> hidden_bias = {0.1f, 0.2f, 0.3f};
+
     
-    int total_cols = num_neurons * input.size();
-    int rows = num_neurons;
-    int cols = input.size();
 
-    for (int i = 0; i < rows; i++) {
-        dot_product = 0;
-        for (int j = 0; j < input.size(); j++) {
-            product = input[j] * weights[i * cols + j];
-            dot_product += product;
-        }
-        result.push_back(dot_product);
 
-    }
-
-    for (int element : result) {
+    for (float element : result) {
         cout << element << " ";
     }
 
